@@ -1,72 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>CamanJS Example</title>
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script> -->
+      <title>LenaJS Example</title>
       <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
       <script type="module" src="./myCustomElement.js"></script>
       <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- <img id="image" src="./example1_600.jpg" style="display: none;">
-    <div class="main dragscroll">
-      <canvas id="canvas"></canvas>
-    </div>
-    <div id="navbar">
-      <button type="button" onclick="zoomin()"> Zoom In</button>
-      <button type="button" onclick="zoomout()"> Zoom Out</button>
-      <button type="button" onclick="invert()">Invertir</button>
-    </div> -->
     <my-custom-element image-url="./example1_600.jpg"></my-custom-element>
-
-    <!-- <script>
-
-      function zoomin() {
-        var myImg = document.getElementById("canvas");
-        var currWidth = myImg.clientWidth;
-        if (currWidth == 2500) return false;
-        else {
-          myImg.style.width = (currWidth + 100) + "px";
-        }
-      }
-
-      function zoomout() {
-        var myImg = document.getElementById("canvas");
-        var currWidth = myImg.clientWidth;
-        if (currWidth == 100) return false;
-        else {
-          myImg.style.width = (currWidth - 100) + "px";
-        }
-      }
-
-      var image = document.getElementById('image');
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
-
-      image.onload = function() {
-          canvas.width = image.width;
-          canvas.height = image.height;
-          ctx.drawImage(image, 0, 0);
-      };
-
-      Caman('#canvas', function() {
-        this.render();
-      });
-
-      function invert(){
-        Caman('#canvas', function() {
-        this.invert().render();
-      });
-      }
-
-      function brightness(brightness){
-        Caman('#canvas', function() {
-          this.brightness(brightness).render()
-        })
-      }
-
-
-
-    </script> -->
   </body>
 </html>
