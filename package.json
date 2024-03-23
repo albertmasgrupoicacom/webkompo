@@ -1,0 +1,18 @@
+{
+  "name": "caman",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.1.6"
+  },
+  "dependencies": {
+    "caman": "^4.1.2",
+    "lena.js": "^0.9.0"
+  }
+}
