@@ -1,4 +1,5 @@
 import * as lena from 'lena.js/dist/index.js';
+import 'dragscroll';
 
 class MyCustomElement extends HTMLElement {
     constructor() {
@@ -7,6 +8,7 @@ class MyCustomElement extends HTMLElement {
         this.imageUrl = this.getAttribute('image-url');
         // Crea l'element canvas
         const canvas = document.createElement('canvas');
+        canvas.classList.add('dragscroll');
         this.shadowRoot.appendChild(canvas);
         
         // Obté les dades de la imatge
@@ -32,12 +34,21 @@ class MyCustomElement extends HTMLElement {
         });
         this.shadowRoot.appendChild(button);
 
+        // const zoomInButton = document.createElement('button');
+        // zoomInButton.textContent = 'Zoom In';
+        // zoomInButton.addEventListener('click', () => {
+        //     const currentTransform = getComputedStyle(canvas).transform;
+        //     const currentScale = currentTransform === 'none' ? 1 : parseFloat(currentTransform.split('(')[1]);
+        //     const scale = currentScale + 0.1;
+        //     canvas.style.transform = `scale(${scale})`;
+        // });
+        // this.shadowRoot.appendChild(zoomInButton);
         const zoomInButton = document.createElement('button');
         zoomInButton.textContent = 'Zoom In';
         zoomInButton.addEventListener('click', () => {
             const currentTransform = getComputedStyle(canvas).transform;
             const currentScale = currentTransform === 'none' ? 1 : parseFloat(currentTransform.split('(')[1]);
-            const scale = currentScale + 0.1;
+            const scale = Math.min(currentScale + 0.1, 1.3); // Limita el zoom a 2 vegades la mida original
             canvas.style.transform = `scale(${scale})`;
         });
         this.shadowRoot.appendChild(zoomInButton);

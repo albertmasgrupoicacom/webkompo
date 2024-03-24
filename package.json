@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "caman": "^4.1.2",
+    "dragscroll": "^0.0.8",
     "lena.js": "^0.9.0"
   }
 }
